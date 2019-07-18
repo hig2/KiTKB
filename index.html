@@ -4,24 +4,43 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="js/style.js"></script>
   <script type="text/javascript" src="js/function.js"></script>
   <title>Настройки</title>
   <script type="text/javascript">
   </script>
  </head>
  <body onload="">
-  <div class="cont">
+  <div class="container">
     <div class="heder">
     </div>
-    <div class="sidebar">
-      <ul class="sidebarUl">
-        <li class="sidebarButton start">Запуск </li>
-        <li class="sidebarButton log">Журнал рецептов</li>
-        <li class="sidebarButton settings active">Настройки</li>
-      </ul>
-    </div>
-    <div class="sidebar">
 
+      <ul class="sidebarUl">
+        <li class="sidebarButton "data-tab="0">Запуск
+        </li>
+        <li class="sidebarButton "data-tab="1">???
+        </li>
+        <li class="sidebarButton "data-tab="2">Журнал рецептов
+        </li>
+        <li class="sidebarButton active" data-tab="3">Настройки
+        </li>
+      </ul>
+
+    <div class="content">
+      <div class="cont"></div>
+      <div class="cont">asdasdas</div>
+      <div class="cont">qweqweqw</div>
+      <div class="cont">
+
+        <h2>Подключение к WiFi роутеру</h2>
+        </br>
+        <form class="wifiForm" >
+          <input id="ssid" value="" placeholder="Имя WiFi сети">
+          <input id="password" value="" type="password" placeholder="Пароль">
+          <input id="but" class="btn" value="submit" type="submit">
+        </form>
+
+      </div>
     </div>
   </div>
  </body>

@@ -1,9 +1,15 @@
 $bgColor: rgba(0, 17, 13, 1);
-
+$bgColorCont: rgba(26, 33, 46, 1); //rgba(26, 41, 38, 1);
+$bgColorButton: rgba(14, 134, 202, 1);
+$bgColorButtonHover: rgba(0,174,255, 1);
+$colorButtonText: rgba(255,255,255,1);
+$colorButtonActive: rgba(9, 83, 134, 1);
+$colorBorderCont: rgba(72, 81, 96, 1);
 
 * {
   padding: 0;
   margin:0;
+
 }
 
 body {
@@ -11,19 +17,74 @@ body {
   width: 100%;
   height:100%;
   display:grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: minmax(100px,auto);
+  grid-template-columns: 10fr 15fr 10fr;
+  grid-template-rows: 200px 1fr  ;
 }
 
-.cont {
+.container {
   grid-column: 2/3;
   grid-row: 2/3;
   display:grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: 1fr 1fr;
-  //grid-row: 1em;
-  >div{
-    background-color: #fff;
-    grid-gap: 1em;
+  grid-template-columns: 7fr 10fr 10fr;
+  grid-template-rows: 80px 400px;
+  grid-column-gap:1px;
+
+  >*{
+  background-color: $bgColorCont;
+  }
+}
+
+.heder {
+  grid-column: 1/4;
+  border-radius: 12px 12px 0 0 ;
+
+
+}
+
+.sidebarUl {
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.content {
+  grid-column: 2/4;
+  border-top: 1px solid $colorBorderCont;
+}
+
+//--------------------------------------------------------
+
+
+.sidebarUl {
+  .active{
+    background-color: $colorButtonActive;
+    color: rgba(255,255,255,0.7);
+    &:hover{
+      background-color: $colorButtonActive;
+      cursor: default;
+    }
+  }
+  li{
+  display:block;
+  background-color: $bgColorButton;
+  border: 1px solid $bgColorButtonHover;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: $colorButtonText;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  transition: color .2s,background-color .2s,border-color .2s;
+     &:hover{
+      background-color: $bgColorButtonHover;
+    }
+    &:active{
+      background-color: $colorButtonActive;
+      color: rgba(255,255,255,0.7);
+    }
   }
 }
