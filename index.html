@@ -10,9 +10,11 @@
   <script type="text/javascript">
   </script>
  </head>
- <body onload="">
+ <body>
   <div class="container">
-    <div class="heder">
+    <div class="heder_1">
+    </div>
+    <div class="heder_2">
     </div>
 
       <ul class="sidebarUl">
@@ -20,26 +22,142 @@
         </li>
         <li class="sidebarButton "data-tab="1">???
         </li>
-        <li class="sidebarButton "data-tab="2">Журнал рецептов
+        <li class="sidebarButton active"data-tab="2">Журнал рецептов
         </li>
-        <li class="sidebarButton active" data-tab="3">Настройки
+        <li class="sidebarButton " data-tab="3">Настройки
         </li>
       </ul>
 
     <div class="content">
       <div class="cont"></div>
       <div class="cont">asdasdas</div>
-      <div class="cont">qweqweqw</div>
       <div class="cont">
+        <div class="jornal">
+          <div class="jorTop">
+            <ol class="jorTopUl">
+              <li data-liJornal="0" class="jorTopLi li1">-пусто-</li>
+              <li data-liJornal="1" class="jorTopLi li2">-пусто-</li>
+              <li data-liJornal="2" class="jorTopLi li3">-пусто-</li>
+              <li data-liJornal="3" class="jorTopLi li4">-пусто-</li>
+              <li data-liJornal="4" class="jorTopLi li5">-пусто-</li>
+              <li data-liJornal="5" class="jorTopLi li6">-пусто-</li>
+              <li data-liJornal="6" class="jorTopLi li7">-пусто-</li>
+              <li data-liJornal="7" class="jorTopLi li8">-пусто-</li>
+              <li data-liJornal="8" class="jorTopLi li9">-пусто-</li>
+              <li data-liJornal="9" class="jorTopLi li10">-пусто-</li>
+              <li data-liJornal="10" class="jorTopLi li11">-пусто-</li>
+              <li data-liJornal="11" class="jorTopLi li12">-пусто-</li>
+              <li data-liJornal="12" class="jorTopLi li13">-пусто-</li>
+              <li data-liJornal="13" class="jorTopLi li14">-пусто-</li>
+              <li data-liJornal="14" class="jorTopLi li15">-пусто-</li>
+              <li data-liJornal="15" class="jorTopLi li16">-пусто-</li>
+              <li data-liJornal="16" class="jorTopLi li17">-пусто-</li>
+              <li data-liJornal="17" class="jorTopLi li18">-пусто-</li>
 
-        <h2>Подключение к WiFi роутеру</h2>
-        </br>
+            </ol>
+          </div>
+          <div class="jorBot">
+            <div class="jorInfo"><span class="">-Выберите рецепт-</span></div>
+            <form class="jorForm">
+              <div class="jorFormInfo">
+                <span class="pauseLabel">Название:</span>
+                <input required class="jorLiName" value="" type="text" placeholder="Рецепт">
+                </br>
+                </br>
+                <button class="jorFormButt" type="submit" name="button">Сохранить</button>
+              </div>
+              <div class="firstPause">
+                <span class="pauseLabel">Паузы:</span>
+                <select class="pauseSelect">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">1</span>
+                  <input required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">2</span>
+                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">3</span>
+                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">4</span>
+                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">5</span>
+                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont pause">
+                  <span class="pauseNum">6</span>
+                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+              </div>
+
+              <div class="twoPauseSelect">
+                <span class="pauseLabel">Время варки:</span>
+                <div class="pauseCont dot">
+                  <span class="pauseNum">В</span>
+                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <span class="pauseLabel">Точки: </span>
+                <select class="timeSelect">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+                <div class="pauseCont time">
+                  <span class="pauseNum">1</span>
+                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont time">
+                  <span class="pauseNum">2</span>
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+                <div class="pauseCont time">
+                  <span class="pauseNum">3</span>
+                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cont">
+        <br/>
+        <h2 class='wifiFormH'>Подключение к WiFI роутеру.</h2>
         <form class="wifiForm" >
-          <input id="ssid" value="" placeholder="Имя WiFi сети">
-          <input id="password" value="" type="password" placeholder="Пароль">
-          <input id="but" class="btn" value="submit" type="submit">
+          <input required id="ssid" value="" pattern="[0-9a-zA-Z.]{1,15}" type="text" placeholder="Имя WiFi сети">
+          <input required id="password" value="" pattern=".{8,15}" type="password" placeholder="Пароль">
+          <button id="but" class="btn" type="submit"></button>
         </form>
-
+        <br/>
+        <hr/>
+        <br/>
+        <h2 class='wifiFormH'>Регулировка громкости.</h2>
+        <form class='volumeForm'>
+          <input type="range" class="volumeRange" name="volume" min="0" max="30" value="0">
+          <span class="volumeValue">0</span>
+        </form>
+        <br/>
+        <hr/>
+        <br/>
       </div>
     </div>
   </div>

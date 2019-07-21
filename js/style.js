@@ -1,4 +1,60 @@
+document.addEventListener("DOMContentLoaded", function() { // плавное появление страницы
+  document.querySelector('.jorTopUl').addEventListener('click', jornal); //клик на журнал
+  function jornal(event){
+    var dataLiJornal = event.target.getAttribute('data-liJornal'); // записывает облость нажатия относительно data
+    if(dataLiJornal != null){ // проверка на правильную облость
+      //console.log(dataLiJornal)
+      var dataJornalBody = document.getElementsByClassName('jorTopLi'); // создаем массив из ли
+      for(var i = 0; i< dataJornalBody.length; i++){ // перебераем массив на поиск правильного варианта
+        if(i == dataLiJornal){
+          dataJornalBody[i].classList.add('active');
+          document.querySelector('.jorInfo').style.display = 'none';
+          document.querySelector('.jorForm').style.display = 'inline-flex';
+        }else{
+          dataJornalBody[i].classList.remove('active');
+        }
+      }
+    }
+  }
+  document.querySelector('.pauseSelect').addEventListener('change', selectPause); // смотрим за sect
+  function selectPause(){
+    var pauseData = document.querySelector('.pauseSelect').selectedIndex; // смотрим что изменилось
+    var pauseBody = document.querySelectorAll('.pause'); // делаем массив из всех блоков
+    for(var i = 0; i < pauseBody.length; i++ ){
+      if( i <= pauseData ){
+        pauseBody[i].querySelector('.pauseTemp').removeAttribute("disabled");
+        pauseBody[i].querySelector('.pauseTime').removeAttribute("disabled");
+      }else{
+        pauseBody[i].querySelector('.pauseTemp').setAttribute("disabled", "");
+        pauseBody[i].querySelector('.pauseTime').setAttribute("disabled", "");
+        pauseBody[i].querySelector('.pauseTemp').value = '';
+        pauseBody[i].querySelector('.pauseTime').value = '';
+      }
+    }
+  }
+  document.querySelector('.timeSelect').addEventListener('change', selectTime);
+  function selectTime(){
+    var pauseData = document.querySelector('.timeSelect').selectedIndex;
+    var pauseBody = document.querySelectorAll('.time');
+    for(var i = 0; i < pauseBody.length; i++ ){
+
+      if( i <= pauseData ){
+        pauseBody[i].querySelector('.pauseTime').removeAttribute("disabled");
+      }else{
+        pauseBody[i].querySelector('.pauseTime').setAttribute("disabled", "");
+        pauseBody[i].querySelector('.pauseTime').value = '';
+      }
+    }
+  }
+
+
+});
+
+
 document.addEventListener("DOMContentLoaded", function() { // Ожидаем загрузки ДОМ
+  setTimeout(function(){
+    document.querySelector('.container').style.opacity = '1';
+  },500)
 //часть для первоночальной загрузки
   var dataTab = document.querySelector('.active').getAttribute('data-tab'); // присваивает значение по умолчанию относительно html
   var tabBody = document.getElementsByClassName('cont');

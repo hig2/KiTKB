@@ -5,6 +5,10 @@ $bgColorButtonHover: rgba(0,174,255, 1);
 $colorButtonText: rgba(255,255,255,1);
 $colorButtonActive: rgba(9, 83, 134, 1);
 $colorBorderCont: rgba(72, 81, 96, 1);
+$colorBgForm: rgba(19, 23, 30, 1);
+$colorGold: rgba(254, 204, 0, 1);
+$colorGreen: rgba(100, 186, 3, 1);
+$colorOrange: rgba(255, 107, 0, 1);
 
 * {
   padding: 0;
@@ -18,39 +22,66 @@ body {
   height:100%;
   display:grid;
   grid-template-columns: 10fr 15fr 10fr;
-  grid-template-rows: 200px 1fr  ;
+  grid-template-rows: 200px 1fr 100px ;
+}
+
+h2{
+  color: $colorButtonText;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+}
+
+hr{
+ background-color: $colorBorderCont;
+ border: 0px none;
+ height:1px;
+}
+
+input[disabled]{
+  background-color: rgba(255,0,0, 0.5) !important;
+  border: 1px dotted rgba(255,0,0, 0.5) !important;
 }
 
 .container {
+  opacity: 0;
+  transition: 1s;
   grid-column: 2/3;
   grid-row: 2/3;
   display:grid;
   grid-template-columns: 7fr 10fr 10fr;
   grid-template-rows: 80px 400px;
-  grid-column-gap:1px;
+  grid-column-gap:0px;
 
   >*{
   background-color: $bgColorCont;
   }
 }
 
-.heder {
-  grid-column: 1/4;
-  border-radius: 12px 12px 0 0 ;
-
-
+.heder_1 {
+  grid-column: 1/2;
+  min-width: 100px;
+  border-radius: 12px 0 0 0 ;
 }
+.heder_2 {
+  grid-column: 2/4;
+  min-width: 400px;
+  border-radius: 0 12px 0 0 ;
+}
+
 
 .sidebarUl {
   grid-column: 1/2;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+  min-width: 100px;
 }
 
 .content {
   grid-column: 2/4;
   border-top: 1px solid $colorBorderCont;
+  min-width: 400px;
 }
 
 //--------------------------------------------------------
@@ -86,5 +117,427 @@ body {
       background-color: $colorButtonActive;
       color: rgba(255,255,255,0.7);
     }
+  }
+}
+
+input[type="text"],input[type="password"] {
+
+  height: 30px;
+  background-color: $colorBgForm;
+  border: 1px solid $bgColorButtonHover;
+  padding-left: 5px;
+
+  color: rgba(255,255,255,0.7);
+  &:focus{
+    outline: 2px solid $bgColorButtonHover;
+    color: $colorButtonText;
+  }
+}
+.wifiForm , .volumeForm{
+ padding-left: 20px;
+}
+
+
+.btn{
+  position: relative;
+  top: 1px;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  border: 1px solid $bgColorButtonHover;
+  background-color: $bgColorButton;
+  transition: color .2s,background-color .2s,border-color .2s;
+  color: rgba(255,255,255,1);
+  font-family: 'icon_save';
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $bgColorButtonHover;
+    color: $colorButtonText;
+  }
+  &:active{
+    border: 1px solid $bgColorButtonHover;
+  }
+}
+
+.volumeValue {
+  color: $colorButtonText;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 7px;
+}
+
+
+//-----описание ползунка
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 50%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: $bgColorButton;;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid black;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:active::-webkit-slider-thumb {
+  border: 1px solid $bgColorButtonHover;
+}
+input[type=range]:active::-webkit-slider-runnable-track {
+  background: $bgColorButtonHover;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: $bgColorButton;;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]:active::-moz-range-track {
+  background-color: $bgColorButtonHover;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:active::-moz-range-thumb {
+  border: 1px solid $bgColorButtonHover;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $bgColorButtonHover;
+}
+input[type=range]:active::-ms-fill-upper {
+  background: $bgColorButtonHover;
+}
+//--------------------
+
+//----журнал
+.cont{
+  margin: 0px 10px 0px 10px ;
+  height: 100%;
+  .jornal{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+  }
+}
+
+.jorTop{
+  border-bottom: 1px solid $colorBorderCont;
+  margin-top: 7px;
+}
+
+.jorTopUl{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 8px;
+  margin-bottom: 15px;
+  .active{
+    border-bottom: 1px dashed $colorButtonText !important;
+    color: $colorButtonText !important;
+    &::after{
+      content: '\e801';
+      position: absolute;
+      font-family: 'icon_pencil';
+      right: 5px;
+      bottom: 5px;
+      transition: 2s;
+      color: $colorOrange;
+      font-size: 16px;
+    }
+  }
+  .jorTopLi{
+  transition: color .2s,background-color .2s,border-color .2s;
+  text-align: center;
+  text-transform: capitalize;
+  padding-left: 25px;
+  padding-right: 25px;
+  //padding-top: 1px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  list-style: none;
+  border-bottom: 1px dashed $colorBorderCont;
+  position: relative;
+  cursor: pointer;
+  &:hover{
+    border-bottom: 1px dashed $colorButtonText;
+    color: $colorButtonText;
+  }
+  &::before{
+  font-size: 18px;
+  position: absolute;
+  left: 2px;
+  bottom: 1px;
+  }
+  }
+
+  .li1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    &::before{
+      content: '1)';
+    }
+  }
+  .li2{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    &::before{
+      content: '2)';
+    }
+  }
+  .li3{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    &::before{
+      content: '3)';
+    }
+  }
+  .li4{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    &::before{
+      content: '4)';
+    }
+  }
+  .li5{
+    grid-column: 1/2;
+    grid-row: 5/6;
+    &::before{
+      content: '5)';
+    }
+  }
+  .li6{
+    grid-column: 1/2;
+    grid-row: 6/7;
+    &::before{
+      content: '6)';
+    }
+  }
+  .li7{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    &::before{
+      content: '7)';
+    }
+  }
+  .li8{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    &::before{
+      content: '8)';
+    }
+  }
+  .li9{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    &::before{
+      content: '9)';
+    }
+  }
+  .li10{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    &::before{
+      content: '10)';
+    }
+  }
+  .li11{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    &::before{
+      content: '11)';
+    }
+  }
+  .li12{
+    grid-column: 2/3;
+    grid-row: 6/7;
+    &::before{
+      content: '12)';
+    }
+  }
+  .li13{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    &::before{
+      content: '13)';
+    }
+  }
+  .li14{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    &::before{
+      content: '14)';
+    }
+  }
+  .li15{
+    grid-column: 3/4;
+    grid-row: 3/4;
+    &::before{
+      content: '15)';
+    }
+  }
+  .li16{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    &::before{
+      content: '16)';
+    }
+  }
+  .li17{
+    grid-column: 3/4;
+    grid-row: 5/6;
+    &::before{
+      content: '17)';
+    }
+  }
+  .li18{
+    grid-column: 3/4;
+    grid-row: 6/7;
+    &::before{
+      content: '18)';
+    }
+  }
+}
+
+.jorBot{
+  padding-top: 6px;
+  padding-left: 10px;
+}
+
+.firstPause, .twoPauseSelect,.jorFormInfo{
+  text-align: center;
+  margin: 0px;
+  padding: 4px;
+  border: 1px solid $colorBorderCont;
+  border-radius: 5px;
+  background-color: $colorBgForm;
+  .pauseSelect,.timeSelect {
+    border-radius: 4px;
+    background-color: $colorBgForm;
+    color: $colorButtonText;
+  }
+}
+.pauseLabel{
+  color: $colorButtonText;
+  padding-right: 2px;
+  font-size: 17px;
+}
+
+.jorForm{
+  display: none;
+}
+
+.jorInfo{
+  color: rgba(255,255,255, 0.7);
+  font-size:20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+
+.pauseCont{
+  position: relative;
+  margin: 2px;
+  padding-right: 5px;
+  width: 120px;
+  background-color: $bgColorButtonHover;
+  border-radius: 5px;
+  .pauseTime,.pauseTemp{
+    padding: 0px;
+    width: 45px;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .pauseNum{
+    color: $colorButtonText;
+    position: relative;
+  }
+}
+
+.twoPauseSelect , .timeSelect{
+  .pauseCont{
+    width: 78px;
+  }
+}
+
+.dot {
+  margin-bottom: 4px;
+
+}
+
+.jorFormInfo{
+  max-width: 250px;
+  .jorLiName{
+    width: 80px;
+    height: 20px;
+  }
+  .jorFormButt{
+    margin: 10px;
   }
 }
