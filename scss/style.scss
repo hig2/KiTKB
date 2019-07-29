@@ -13,7 +13,6 @@ $colorOrange: rgba(255, 107, 0, 1);
 * {
   padding: 0;
   margin:0;
-
 }
 
 body {
@@ -467,6 +466,9 @@ input[type=range]:active::-ms-fill-upper {
   padding-left: 10px;
 }
 
+.twoPauseSelect{
+  min-width: 100px;
+}
 .firstPause, .twoPauseSelect,.jorFormInfo{
   text-align: center;
   margin: 0px;
@@ -488,10 +490,14 @@ input[type=range]:active::-ms-fill-upper {
 
 .jorForm{
   display: none;
+
 }
 
 .jorInfo{
   color: rgba(255,255,255, 0.7);
+  border-radius: 10px;
+  border: 2px dashed rgba(255,255,255, 0.7);
+  padding: 20px;
   font-size:20px;
   text-align: center;
   margin-top: 40px;
@@ -534,10 +540,28 @@ input[type=range]:active::-ms-fill-upper {
 .jorFormInfo{
   max-width: 250px;
   .jorLiName{
-    width: 80px;
+    width: 57px;
     height: 20px;
   }
   .jorFormButt{
-    margin: 10px;
+    cursor: pointer;
+    padding: 5px;
+    color: $colorButtonText;
+    background-color: $bgColorButton;
+    border: 1px solid $bgColorButtonHover;
+    transition: color .2s,background-color .2s,border-color .2s;
+    border-radius: 2px;
+    &:hover{
+      background-color: $bgColorButtonHover;
+    }
+    &:active{
+      background-color: $colorButtonActive;
+      outline: none;
+    }
   }
+}
+
+.jorInfoLi {
+  list-style: none;
+  color: $colorButtonText;
 }

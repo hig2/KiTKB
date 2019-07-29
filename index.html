@@ -61,8 +61,14 @@
             <form class="jorForm">
               <div class="jorFormInfo">
                 <span class="pauseLabel">Название:</span>
-                <input required class="jorLiName" value="" type="text" placeholder="Рецепт">
                 </br>
+                <input required maxlength="7" class="jorLiName" value="" type="text" placeholder="Рецепт">
+                </br>
+                <ul class="jorInfoUl">
+                  <li class="jorInfoLi">Общее время:</br><span>000</span></li>
+                  <li class="jorInfoLi">Паузы: <span>0</span></li>
+                  <li class="jorInfoLi">Точки: <span>0</span></li>
+                </ul>
                 </br>
                 <button class="jorFormButt" type="submit" name="button">Сохранить</button>
               </div>
@@ -78,33 +84,33 @@
                 </select>
                 <div class="pauseCont pause">
                   <span class="pauseNum">1</span>
-                  <input required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="0" required maxlength="3" class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="0" required maxlength="3" class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont pause">
                   <span class="pauseNum">2</span>
-                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="1" disabled maxlength="3" required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="1" disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont pause">
                   <span class="pauseNum">3</span>
-                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="2" disabled maxlength="3" required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="2" disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont pause">
                   <span class="pauseNum">4</span>
-                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="3" disabled maxlength="3" required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="3" disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont pause">
                   <span class="pauseNum">5</span>
-                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="4" disabled maxlength="3" required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="4" disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont pause">
                   <span class="pauseNum">6</span>
-                  <input disabled required class="pauseTemp" value="" type="text" placeholder="T-℃">
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input data-pauseTemp="6" disabled maxlength="3" required class="pauseTemp" value="" type="text" placeholder="T-℃">
+                  <input data-pauseTime="6" disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
               </div>
 
@@ -112,7 +118,7 @@
                 <span class="pauseLabel">Время варки:</span>
                 <div class="pauseCont dot">
                   <span class="pauseNum">В</span>
-                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input required maxlength="3" class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <span class="pauseLabel">Точки: </span>
                 <select class="timeSelect">
@@ -122,15 +128,15 @@
                 </select>
                 <div class="pauseCont time">
                   <span class="pauseNum">1</span>
-                  <input required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input required maxlength="3" class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont time">
                   <span class="pauseNum">2</span>
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
                 <div class="pauseCont time">
                   <span class="pauseNum">3</span>
-                  <input disabled required class="pauseTime" value="" type="text" placeholder="Мин.">
+                  <input disabled maxlength="3" required class="pauseTime" value="" type="text" placeholder="Мин.">
                 </div>
               </div>
             </form>

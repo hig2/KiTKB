@@ -13,9 +13,11 @@ document.addEventListener("DOMContentLoaded", function() { // плавное п�
         }else{
           dataJornalBody[i].classList.remove('active');
         }
+
       }
     }
   }
+
   document.querySelector('.pauseSelect').addEventListener('change', selectPause); // смотрим за sect
   function selectPause(){
     var pauseData = document.querySelector('.pauseSelect').selectedIndex; // смотрим что изменилось
@@ -32,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function() { // плавное п�
       }
     }
   }
-  document.querySelector('.timeSelect').addEventListener('change', selectTime);
+
+  document.querySelector('.timeSelect').addEventListener('change', selectTime); // второй селект
   function selectTime(){
     var pauseData = document.querySelector('.timeSelect').selectedIndex;
     var pauseBody = document.querySelectorAll('.time');
@@ -46,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function() { // плавное п�
       }
     }
   }
-
 
 });
 
