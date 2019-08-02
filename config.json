@@ -1,0 +1,15 @@
+{
+  "SSDP": "",
+  "ssid": "",
+  "ssidPass": "",
+  "ip": "",
+  "ssidAP": "",
+  "ssidApPass": "",
+  "ddns": "",
+  "ddnsName": "",
+  "ddnsPort": 8080,
+  "mqttServer": "",
+  "mqttPort": 15535,
+  "mqttUser": "",
+  "mqttPass": ""
+}

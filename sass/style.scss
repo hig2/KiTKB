@@ -540,8 +540,10 @@ input[type=range]:active::-ms-fill-upper {
 .jorFormInfo{
   max-width: 250px;
   .jorLiName{
+    padding: 0px;
     width: 57px;
     height: 20px;
+    text-align: center;
   }
   .jorFormButt{
     cursor: pointer;
