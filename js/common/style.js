@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function() { // плавное п�
   function jornal(event){
     var dataLiJornal = event.target.getAttribute('data-liJornal'); // записывает облость нажатия относительно data
     if(dataLiJornal != null){ // проверка на правильную облость
+      ajaxGet('/jornal?number='+dataLiJornal, function (data) {
+        config = JSON.parse(data);
+      }); 
       var dataJornalBody = document.getElementsByClassName('jorTopLi'); // создаем массив из ли
       for(var i = 0; i< dataJornalBody.length; i++){ // перебераем массив на поиск правильного варианта
         if(i == dataLiJornal){
